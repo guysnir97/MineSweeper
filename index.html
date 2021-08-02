@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/app.css" />
+    <title>Document</title>
+  </head>
+
+  <body onload="initGame()" oncontextmenu="return false;">
+    <h1>hola shola!</h1>
+    <h1 class="message"></h1>
+    <div class="board-container"></div>
+    <div class="stopwatch">your time is: <span></span></div>
+    <button onclick="startGame()" class="start">start the game</button>
+    <div class="buttons-size">
+      <button onclick="changeSize(4,2)" class="easy">easy</button>
+      <button onclick="changeSize(8,4)" class="meduim">meduim</button>
+      <button onclick="changeSize(10,3)" class="hard">hard</button>
+    </div>
+    <script src="./js/util.js"></script>
+    <script src="./js/game.js"></script>
+  </body>
+</html>

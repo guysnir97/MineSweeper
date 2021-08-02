@@ -1,0 +1,117 @@
+* {
+  box-sizing: border-box;
+}
+html {
+  background: linear-gradient(
+    -90deg,
+    rgba(219, 186, 186, 1) 0,
+    rgba(0, 150, 255, 1) 100%
+  );
+}
+.board-container {
+  margin: auto;
+  text-align: center;
+}
+tbody {
+  border: 1px solid black;
+}
+table {
+  margin: auto;
+  text-align: center;
+  border: rgb(12, 12, 12);
+  border: 1px solid blue;
+}
+td {
+  height: 50px;
+  width: 50px;
+  border: 1px solid rgb(10, 10, 10);
+  background-color: rgb(97, 141, 137);
+}
+td:hover {
+  background-color: burlywood;
+}
+.hidden {
+  visibility: hidden;
+}
+.message {
+  margin-left: 20px;
+  font-size: center;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  display:none;
+}
+h1 {
+  margin-left: auto;
+  margin-right: auto;
+  font-size: center;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.stopwatch {
+  margin-top: 20px;
+  text-align: center;
+  justify-content: center;
+  display: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.start {
+  margin-top: 30px;
+  margin: auto;
+  justify-content: center;
+  display: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  border: 1px solid #018dc4;
+  border-radius: 3px;
+  font: normal 21px / normal 'Times New Roman', Times, serif;
+  color: rgba(255, 255, 255, 0.9);
+  text-overflow: clip;
+  background: rgba(38, 44, 46, 0.9);
+  box-shadow: 4px 2px 2px 0 rgba(0, 0, 0, 0.2);
+  transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+}
+button {
+  margin-top: 30px;
+}
+.buttons-size {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+.easy {
+  cursor: pointer;
+  padding: 10px 20px;
+  border: 1px solid #018dc4;
+  border-radius: 3px;
+  font: normal 21px / normal 'Times New Roman', Times, serif;
+  color: rgba(255, 255, 255, 0.9);
+  text-overflow: clip;
+  background: rgba(38, 44, 46, 0.9);
+  box-shadow: 4px 2px 2px 0 rgba(0, 0, 0, 0.2);
+  transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+}
+.meduim {
+  cursor: pointer;
+  padding: 10px 20px;
+  border: 1px solid #018dc4;
+  border-radius: 3px;
+  font: normal 21px / normal 'Times New Roman', Times, serif;
+  color: rgba(255, 255, 255, 0.9);
+  text-overflow: clip;
+  background: rgba(38, 44, 46, 0.9);
+  box-shadow: 4px 2px 2px 0 rgba(0, 0, 0, 0.2);
+  transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+}
+.hard {
+  cursor: pointer;
+  padding: 10px 20px;
+  border: 1px solid #018dc4;
+  border-radius: 3px;
+  font: normal 21px / normal 'Times New Roman', Times, serif;
+  color: rgba(255, 255, 255, 0.9);
+  text-overflow: clip;
+  background: rgba(38, 44, 46, 0.9);
+  box-shadow: 4px 2px 2px 0 rgba(0, 0, 0, 0.2);
+  transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+}
