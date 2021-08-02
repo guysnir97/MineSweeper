@@ -1,6 +1,6 @@
-'use strict';
-const MINE = '💣';
-const FLAG = '🚩';
+"use strict";
+const MINE = "💣";
+const FLAG = "🚩";
 var gBoard;
 var myTime;
 var gisFirstClick;
@@ -16,6 +16,7 @@ var gGame = {
 };
 // gBoard = buildBoard();
 
+console.log("hi");
 var gBoardTes = buildBoard();
 function initGame() {
   gisFirstClick = true;
@@ -30,9 +31,9 @@ function initGame() {
 function startGame() {
   stopTimer();
   initGame();
-  document.querySelector('.message').style.display = 'none';
-  document.querySelector('.start').style.display = 'block';
-  document.querySelector('.stopwatch').style.display = 'block';
+  document.querySelector(".message").style.display = "none";
+  document.querySelector(".start").style.display = "block";
+  document.querySelector(".stopwatch").style.display = "block";
 }
 
 function buildBoard() {
@@ -53,19 +54,19 @@ function buildBoard() {
 
 function renderBoard(board) {
   var cellContant;
-  var strHTML = '<table><tbody>';
+  var strHTML = "<table><tbody>";
   for (var i = 0; i < board.length; i++) {
-    strHTML += '<tr>';
+    strHTML += "<tr>";
     for (var j = 0; j < board[0].length; j++) {
       cellContant = gBoard[i][j].isMine ? MINE : board[i][j].minesAroundCount;
       strHTML += `<td id="cell${i}-${j}" oncontextmenu=cellMarked(this,${i},${j}) 
        onclick="cellClicked(this,${i},${j})"><span class="hidden">${cellContant}</span>
       </td>`;
     }
-    strHTML += '</tr>';
+    strHTML += "</tr>";
   }
-  strHTML += '</tbody></table>';
-  var elContainer = document.querySelector('.board-container');
+  strHTML += "</tbody></table>";
+  var elContainer = document.querySelector(".board-container");
   elContainer.innerHTML = strHTML;
 }
 
@@ -111,7 +112,7 @@ function countMineNegs(cellI, cellJ, board) {
     }
   }
   if (mineNegs === 0) {
-    mineNegs = '';
+    mineNegs = "";
   }
   return mineNegs;
 }
@@ -119,8 +120,8 @@ function isFirstClick() {
   if (gisFirstClick) {
     gisFirstClick = false;
     startTimer();
-    document.querySelector('.start').style.display = 'block';
-    document.querySelector('.stopwatch').style.display = 'block';
+    document.querySelector(".start").style.display = "block";
+    document.querySelector(".stopwatch").style.display = "block";
   }
 }
 function cellClicked(elCell, i, j) {
@@ -128,7 +129,7 @@ function cellClicked(elCell, i, j) {
   if (!gGame.isOn) return;
   if (gBoard[i][j].isShown) return;
   if (gBoard[i][j].isMarked) return;
-  if(gBoard[i][j].minesAroundCount ==='') showCellNegs(i,j)
+  if (gBoard[i][j].minesAroundCount === "") showCellNegs(i, j);
   if (gBoard[i][j].isMine) {
     showMine();
     GameOver();
@@ -137,22 +138,22 @@ function cellClicked(elCell, i, j) {
     gBoard[i][j].isShown = true;
     gGame.shownCount++;
     document
-      .querySelector('#' + elCell.id + ' .hidden ')
-      .classList.remove('hidden');
-    elCell.style.backgroundColor = 'red';
+      .querySelector("#" + elCell.id + " .hidden ")
+      .classList.remove("hidden");
+    elCell.style.backgroundColor = "red";
   }
   isGameWon();
 }
 
 function cellMarked(elCell, i, j) {
-  console.log('hi');
+  console.log("hi");
   isFirstClick();
   if (gBoard[i][j].isShown) return;
   if (gBoard[i][j].isMarked) return;
   if (gGame.markedCount === gLevel.mines) return;
   gBoard[i][j].isMarked = true;
   gGame.markedCount++;
-  elCell.children[0].classList.remove('hidden')
+  elCell.children[0].classList.remove("hidden");
   elCell.children[0].innerHTML = FLAG;
   isGameWon();
 }
@@ -160,8 +161,8 @@ function cellMarked(elCell, i, j) {
 function GameOver() {
   gGame.isOn = false;
   stopTimer();
-  var elText = document.querySelector('.message');
-  elText.style.display = 'block';
+  var elText = document.querySelector(".message");
+  elText.style.display = "block";
   elText.innerHTML = `you lost!`;
 }
 
@@ -169,8 +170,8 @@ function isGameWon() {
   if (gGame.shownCount === gLevel.size ** 2 - gGame.markedCount) {
     gGame.isOn = false;
     stopTimer();
-    var elText = document.querySelector('.message');
-    elText.style.display = 'block';
+    var elText = document.querySelector(".message");
+    elText.style.display = "block";
     elText.innerHTML = `you won!`;
   }
 }
@@ -194,7 +195,7 @@ function showMine() {
     for (var j = 0; j < gBoard.length; j++) {
       var curCell = document.querySelector(`#cell${i}-${j} span`);
       if (gBoard[i][j].isMine) {
-        curCell.classList.remove('hidden');
+        curCell.classList.remove("hidden");
       }
     }
   }
